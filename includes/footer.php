@@ -3,7 +3,7 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h3><i class="fas fa-crown"></i> الذهب الملكي</h3>
-                    <p>شركة رائدة في تجارة الذهب والمجوهرات منذ أكثر من 25 عاماً. نقدم أجود أنواع الذهب والمشغولات الذهبية بأفضل الأسعار.</p>
+                    <p>شركة رائدة في تجارة الذهب والمجوهرات منذ أكثر من سنة. نقدم أجود أنواع الذهب والمشغولات الذهبية بأفضل الأسعار.</p>
                 </div>
                 <div class="footer-section">
                     <h3>روابط سريعة</h3>
@@ -17,9 +17,9 @@
                 <div class="footer-section">
                     <h3>تواصل معنا</h3>
                     <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> القاهرة، مصر - شارع الصاغة</li>
-                        <li><i class="fas fa-phone"></i> <span dir="ltr">+20 123 456 7890</span></li>
-                        <li><i class="fas fa-envelope"></i> info@royalgold.com</li>
+                                                <li><i class="fas fa-map-marker-alt"></i> طلب اونلاين</li>
+                                                <li><i class="fas fa-phone"></i> <span dir="ltr">01124138988</span></li>
+                                                <li><i class="fas fa-envelope"></i> mahmoudramadan9544@gmail.com</li>
                     </ul>
                 </div>
                 <div class="footer-section">

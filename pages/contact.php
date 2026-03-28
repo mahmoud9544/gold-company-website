@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                         <div class="info-content">
                             <h3>العنوان</h3>
-                            <p>15 شارع الصاغة، حي الحسين<br>القاهرة، مصر</p>
+                            <p>طلب اونلاين</p>
                         </div>
                     </div>
 
@@ -128,8 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                         <div class="info-content">
                             <h3>الهاتف</h3>
-                            <p dir="ltr">+20 123 456 7890</p>
-                            <p dir="ltr">+20 098 765 4321</p>
+                            <p dir="ltr">01124138988</p>
                         </div>
                     </div>
 
@@ -139,8 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </div>
                         <div class="info-content">
                             <h3>البريد الإلكتروني</h3>
-                            <p>info@royalgold.com</p>
-                            <p>sales@royalgold.com</p>
+                            <p>mahmoudramadan9544@gmail.com</p>
                         </div>
                     </div>
 
