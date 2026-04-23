@@ -391,6 +391,22 @@ img {
     font-size: 0.9rem;
 }
 
+.prices-updated {
+    color: var(--gold-primary);
+    font-weight: 600;
+}
+
+@keyframes priceFlash {
+    0%   { background: rgba(212, 175, 55, 0.0); }
+    30%  { background: rgba(212, 175, 55, 0.35); }
+    100% { background: rgba(212, 175, 55, 0.0); }
+}
+
+.price-flash {
+    animation: priceFlash 1.2s ease;
+    border-radius: 8px;
+}
+
 /* ========== Popular Products Section ========== */
 .popular-products {
     padding: 100px 0;
