@@ -1,4 +1,6 @@
 <?php $pageTitle = 'الرئيسية'; ?>
+<?php require_once __DIR__ . '/includes/prices.php'; ?>
+<?php $goldPrices = getGoldPrices(); ?>
 <?php include 'includes/header.php'; ?>
 
     <!-- Hero Section -->
@@ -50,28 +52,38 @@
     </section>
 
     <!-- Gold Prices Section -->
-    <section class="gold-prices">
+    <section class="gold-prices" id="goldPrices" data-endpoint="api/prices.php" data-refresh-ms="300000">
         <div class="container">
             <h2 class="section-title">أسعار الذهب اليوم</h2>
             <div class="prices-grid">
                 <div class="price-card">
                     <div class="price-karat">عيار 24</div>
-                    <div class="price-value">3,250 ج.م</div>
+                    <div class="price-value" data-karat="24"><?php echo formatGoldPrice($goldPrices['karat24']); ?> ج.م</div>
                     <div class="price-unit">للجرام الواحد</div>
                 </div>
                 <div class="price-card featured">
                     <div class="price-badge">الأكثر طلباً</div>
                     <div class="price-karat">عيار 21</div>
-                    <div class="price-value">2,845 ج.م</div>
+                    <div class="price-value" data-karat="21"><?php echo formatGoldPrice($goldPrices['karat21']); ?> ج.م</div>
                     <div class="price-unit">للجرام الواحد</div>
                 </div>
                 <div class="price-card">
                     <div class="price-karat">عيار 18</div>
-                    <div class="price-value">2,440 ج.م</div>
+                    <div class="price-value" data-karat="18"><?php echo formatGoldPrice($goldPrices['karat18']); ?> ج.م</div>
                     <div class="price-unit">للجرام الواحد</div>
                 </div>
             </div>
-            <p class="prices-note">* الأسعار استرشادية وتتغير يومياً حسب السوق العالمي</p>
+            <p class="prices-note">
+                * الأسعار استرشادية مصدرها
+                <?php echo htmlspecialchars($goldPrices['source'] ?? 'مصدر خارجي', ENT_QUOTES, 'UTF-8'); ?>
+                وتتحدث تلقائيًا.
+                <?php if (!empty($goldPrices['updated_at'])): ?>
+                    آخر تحديث:
+                    <span class="prices-updated" data-updated-at="<?php echo (int) $goldPrices['updated_at']; ?>">
+                        <?php echo htmlspecialchars(date('Y-m-d H:i', (int) $goldPrices['updated_at']), ENT_QUOTES, 'UTF-8'); ?>
+                    </span>
+                <?php endif; ?>
+            </p>
         </div>
     </section>
 

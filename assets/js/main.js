@@ -99,3 +99,63 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ========== Live Gold Prices Auto-Refresh ==========
+(function () {
+    const section = document.getElementById('goldPrices');
+    if (!section) return;
+
+    const endpoint = section.getAttribute('data-endpoint') || 'api/prices.php';
+    const refreshMs = parseInt(section.getAttribute('data-refresh-ms'), 10) || 5 * 60 * 1000;
+
+    const formatter = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+    function formatTimestamp(unixSeconds) {
+        if (!unixSeconds) return '';
+        const d = new Date(unixSeconds * 1000);
+        return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate())
+            + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+    }
+
+    function applyPrices(data) {
+        const mapping = { 24: data.karat24, 21: data.karat21, 18: data.karat18 };
+        Object.keys(mapping).forEach(function (karat) {
+            const value = mapping[karat];
+            if (typeof value !== 'number' || isNaN(value)) return;
+            const el = section.querySelector('.price-value[data-karat="' + karat + '"]');
+            if (!el) return;
+            const newText = formatter.format(value) + ' ج.م';
+            if (el.textContent.trim() !== newText) {
+                el.textContent = newText;
+                el.classList.remove('price-flash');
+                // Force reflow so the animation restarts
+                void el.offsetWidth;
+                el.classList.add('price-flash');
+            }
+        });
+
+        const updatedEl = section.querySelector('.prices-updated');
+        if (updatedEl && data.updated_at) {
+            updatedEl.setAttribute('data-updated-at', String(data.updated_at));
+            updatedEl.textContent = formatTimestamp(data.updated_at);
+        }
+    }
+
+    function refresh() {
+        fetch(endpoint, { cache: 'no-store', headers: { 'Accept': 'application/json' } })
+            .then(function (res) {
+                if (!res.ok) throw new Error('HTTP ' + res.status);
+                return res.json();
+            })
+            .then(applyPrices)
+            .catch(function () { /* silently ignore; retry next tick */ });
+    }
+
+    // Refresh on a timer, and also when the tab becomes visible again
+    setInterval(refresh, refreshMs);
+    document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'visible') refresh();
+    });
+})();
