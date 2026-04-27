@@ -2,7 +2,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-section">
-                    <h3><i class="fas fa-crown"></i> الذهب الملكي</h3>
+                    <h3><i class="fas fa-crown"></i> Gold Technology</h3>
                     <p>شركة رائدة في تجارة الذهب والمجوهرات منذ أكثر من سنة. نقدم أجود أنواع الذهب والمشغولات الذهبية بأفضل الأسعار.</p>
                 </div>
                 <div class="footer-section">
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo date('Y'); ?> شركة الذهب الملكي. جميع الحقوق محفوظة.</p>
+                <p>&copy; <?php echo date('Y'); ?> Gold Technology. جميع الحقوق محفوظة.</p>
             </div>
         </div>
     </footer>

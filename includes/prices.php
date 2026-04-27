@@ -54,7 +54,7 @@ if (!function_exists('gold_prices_fetch_url')) {
                 CURLOPT_FOLLOWLOCATION => true,
                 CURLOPT_TIMEOUT        => $timeout,
                 CURLOPT_CONNECTTIMEOUT => $timeout,
-                CURLOPT_USERAGENT      => 'Mozilla/5.0 (compatible; RoyalGoldBot/1.0; +https://royal-gold.example)',
+                CURLOPT_USERAGENT      => 'Mozilla/5.0 (compatible; GoldTechBot/1.0; +https://gold-technology.example)',
                 CURLOPT_SSL_VERIFYPEER => true,
             ]);
             $body = curl_exec($ch);
@@ -70,7 +70,7 @@ if (!function_exists('gold_prices_fetch_url')) {
             'http' => [
                 'method'        => 'GET',
                 'timeout'       => $timeout,
-                'header'        => "User-Agent: Mozilla/5.0 (compatible; RoyalGoldBot/1.0)\r\n",
+                'header'        => "User-Agent: Mozilla/5.0 (compatible; GoldTechBot/1.0)\r\n",
                 'follow_location' => 1,
             ],
             'ssl' => [

@@ -7,7 +7,7 @@
     <section class="hero">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <h1>شركة الذهب الملكي</h1>
+            <h1>Gold Technology</h1>
             <p>نقدم لكم أرقى المشغولات الذهبية والمجوهرات بأعلى جودة وأفضل الأسعار</p>
             <a href="pages/products.php" class="btn btn-primary">تصفح منتجاتنا</a>
             <a href="pages/contact.php" class="btn btn-outline">تواصل معنا</a>
