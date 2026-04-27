@@ -7,7 +7,7 @@ $basePath = $isSubPage ? '../' : '';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo isset($pageTitle) ? $pageTitle . ' | ' : ''; ?>شركة الذهب الملكي</title>
+    <title><?php echo isset($pageTitle) ? $pageTitle . ' | ' : ''; ?>Gold Technology</title>
     <link rel="stylesheet" href="<?php echo $basePath; ?>assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@ $basePath = $isSubPage ? '../' : '';
         <div class="container nav-container">
             <a href="<?php echo $basePath; ?>index.php" class="logo">
                 <i class="fas fa-crown"></i>
-                <span>الذهب الملكي</span>
+                <span>Gold Technology</span>
             </a>
             <button class="nav-toggle" id="navToggle" aria-label="toggle navigation">
                 <i class="fas fa-bars"></i>
